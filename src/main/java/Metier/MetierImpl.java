@@ -2,11 +2,13 @@ package Metier;
 
 import Dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("metier")
+@Component
 public class MetierImpl implements IMetier {
     @Autowired
+    @Qualifier("vbd")
     private IDao dao;
     @Override
     public double calcul() {
